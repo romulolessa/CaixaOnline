@@ -1,0 +1,30 @@
+*{
+    /*margin: 0;
+    padding: 0;*/
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+}
+html{
+    max-width: 1500px;
+    margin: auto;
+}
+.container{
+    margin-top: auto;
+    background-color: grey;
+    border-radius: 10px;
+
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+.menu{
+    display: inline-grid;
+}
+#resultado{
+    display: inline-flex;
+}
+#resultado p{
+    padding:0 50px;
+}

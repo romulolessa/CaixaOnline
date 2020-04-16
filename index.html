@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Caixa de Loja</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Administrador de Caixa Online</h1>
+        <div class="menu">
+            <input type="number" name="abertura" id="abertura" placeholder="Valor para Abrir o caixa em:">
+            <button id="abrir" onclick="AbriCaixa()">Abrir</button>
+            <input type="text" name="nomeProduto" id="nomeProduto" placeholder="Nome do Produto">
+            <input type="number" name="valorProduto" id="valorProduto" placeholder="Valor do Produto">
+            <button onclick="CadProduto()">Cadastrar</button>
+            <input type="number" name="Troco" id="valorPagoCliente" placeholder="Valor pago pelo Cliente">
+            <button onclick="Venda()">Fechar</button>
+        </div>
+        <div>
+            <p>Troco: <strong id="troco">R$</strong></p>
+        </div>
+        <div id="resultado">
+            <p>Inicial: <strong id="valorAbertura">R$</strong></p>
+            <p>Em Caixa: <strong id="valorReal">R$</strong></p>
+            <button onclick="CaixaFinal()">Fechar Caixa</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
