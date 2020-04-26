@@ -11,22 +11,44 @@ let inputValorProduto= document.getElementById("valorProduto");
 let nomeproduto = inputNomeProduto.value;
 let preco = inputValorProduto.value;
 
-var armazenamento = [];
+var armazenamento = [{}];
    
 console.log(inputAbrirCaixa, inputNomeProduto, inputValorProduto, inputPagoCliente, valorReal);
 
-function AbriCaixa(){
-    var aberturaCaixa = document.getElementById("valorAbertura");
-    var buttonAbertura = document.getElementById("abrir");
-    var abricaixa = inputAbrirCaixa.value;
+// inicio do codigo 
+var buttonAbertura = document.getElementById("abrir");
+var buttonCadastrarProduto = document.getElementById(`cadastrarProduto`);
+var buttonFeharCompra = document.getElementById("fecharCompra");
 
-    valorInicial ="R$ " + abricaixa;
-    aberturaCaixa.innerHTML = valorInicial;
-    console.log("Valor em Caixa: " + inputAbrirCaixa.value)
+//comecando abertura da funcao de abrir caixa;
+buttonAbertura.addEventListener("click",function(){
+    var inputAbrirCaixa = document.getElementById("abertura");
+    var aberturaCaixa = document.getElementById("valorAbertura");
+    var valorAbertura = inputAbrirCaixa.value;
+
+    aberturaCaixa.innerHTML = ('R$ '+valorAbertura);
 
     inputAbrirCaixa.style.display="none";
     buttonAbertura.style.display="none";
-}
+
+    console.log("Valor em Caixa: " + inputAbrirCaixa.value)
+});
+buttonCadastrarProduto.addEventListener(`click`, function(){
+    var inputNomeProduto= document.getElementById("nomeProduto");
+    var inputValorProduto= document.getElementById("valorProduto");
+    var nomeproduto = inputNomeProduto.value;
+    var preco = inputValorProduto.value;
+
+    return armazenamento.push({nome: nomeproduto, valor: preco});
+});
+
+buttonFeharCompra.addEventListener(`click`, function(){
+    var armazenaValorCompra = armazenamento.reduce(armazenamento.preco) 
+    console.log(armazenaValorCompra)
+});
+
+
+/*
 function CadProduto(nomeproduto, preco){
     var inputNomeProduto= document.getElementById("nomeProduto");
     var inputValorProduto= document.getElementById("valorProduto");
@@ -68,4 +90,3 @@ function CaixaFinal(){
 
     }
 }*/
-
